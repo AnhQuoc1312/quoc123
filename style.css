@@ -1,70 +1,68 @@
-/* Thiết lập chung */
+/* 1. Thiết lập chung */
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
 }
 
-/* Định dạng Header */
+/* 2. Header */
 header {
-  background-color: #f1f1f1;
-  padding: 30px;
+  padding: 40px;
   text-align: center;
+  background: #1abc9c;
+  color: white;
 }
 
-/* 1. Định dạng thanh điều hướng (Topnav) */
+/* 3. Thanh điều hướng (Sử dụng Flexbox cho menu) */
 .topnav {
+  display: flex;
+  background-color: #333;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav li {
-  float: left;
 }
 
 .topnav li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 20px;
   text-decoration: none;
 }
 
 .topnav li a:hover {
-  background-color: #111;
+  background-color: #ddd;
+  color: black;
 }
 
-/* 2. Định dạng Flexbox Container (Chia 3 cột) */
+/* 4. Bố cục Flexbox chính */
 .flex-container {
   display: flex;
-  flex-wrap: wrap; /* Cho phép rớt dòng khi màn hình nhỏ */
+  flex-wrap: wrap; /* Cho phép các cột rớt dòng khi màn hình nhỏ */
 }
 
-/* Cột nội dung chính (giữa) chiếm nhiều không gian nhất */
-.main {
-  flex: 50%;
-  padding: 20px;
-}
-
-/* Hai cột bên (Side) chiếm ít không gian hơn */
 .side {
-  flex: 25%;
+  flex: 20%; /* Cột bên chiếm 20% */
+  background-color: #f1f1f1;
   padding: 20px;
 }
 
-/* 3. Responsive: Khi màn hình nhỏ hơn 700px, các cột xếp chồng lên nhau */
+.main {
+  flex: 60%; /* Cột chính chiếm 60% */
+  background-color: white;
+  padding: 20px;
+}
+
+/* 5. Responsive: Khi màn hình nhỏ hơn 700px */
 @media (max-width: 700px) {
   .flex-container {
-    flex-direction: column;
+    flex-direction: column; /* Chuyển từ hàng ngang thành cột dọc */
   }
-  .topnav li {
-    float: none;
-    width: 100%;
+  
+  .topnav {
+    flex-direction: column; /* Menu cũng chuyển thành cột dọc trên mobile */
   }
 }
