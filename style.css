@@ -1,68 +1,33 @@
-/* 1. Thiết lập chung */
-* {
-  box-sizing: border-box;
-}
-
+/* Thiết lập cơ bản cho font chữ */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
+  font-family: serif;
+  padding: 20px;
 }
 
-/* 2. Header */
-header {
-  padding: 40px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-/* 3. Thanh điều hướng (Sử dụng Flexbox cho menu) */
-.topnav {
-  display: flex;
-  background-color: #333;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.topnav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-
-.topnav li a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* 4. Bố cục Flexbox chính */
+/* 1. Thiết lập Flex Container (Khối màu xanh lam) */
 .flex-container {
-  display: flex;
-  flex-wrap: wrap; /* Cho phép các cột rớt dòng khi màn hình nhỏ */
+  display: flex;             /* Kích hoạt Flexbox */
+  background-color: #1e90ff; /* Màu xanh DodgerBlue */
+  padding: 10px;
+  gap: 10px;                 /* Tạo khoảng cách giữa các khối con */
 }
 
-.side {
-  flex: 20%; /* Cột bên chiếm 20% */
+/* 2. Thiết lập Flex Items (Các khối màu xám trắng) */
+.flex-item {
   background-color: #f1f1f1;
-  padding: 20px;
+  padding: 20px 10px;        /* Padding trên-dưới và trái-phải */
+  font-size: 20px;
+  text-align: center;
+  flex: 1;                   /* Giúp các khối có chiều rộng bằng nhau */
 }
 
-.main {
-  flex: 60%; /* Cột chính chiếm 60% */
-  background-color: white;
-  padding: 20px;
-}
-
-/* 5. Responsive: Khi màn hình nhỏ hơn 700px */
-@media (max-width: 700px) {
-  .flex-container {
-    flex-direction: column; /* Chuyển từ hàng ngang thành cột dọc */
-  }
-  
-  .topnav {
-    flex-direction: column; /* Menu cũng chuyển thành cột dọc trên mobile */
-  }
+/* Kiểu chữ cho các đoạn văn mô tả */
+p {
+  font-size: 14px;
+  margin-top: 15px;
 }
